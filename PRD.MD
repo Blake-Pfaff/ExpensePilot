@@ -17,21 +17,25 @@ Deployment Docker + Docker Compose Containerized backend + database
 
 expensepilot/
 ├── src/
-│ ├── app.js
-│ ├── server.js
-│ ├── config/
-│ │ └── db.js
-│ ├── prisma/
-│ │ └── schema.prisma
-│ ├── controllers/
-│ ├── routes/
-│ ├── middleware/
-│ ├── utils/
-│ └── docs/
-├── tests/
+│   ├── server.js              # Server entry point
+│   ├── app.js                 # Express app configuration
+│   ├── config/
+│   │   └── database.js        # Database connection
+│   ├── controllers/           # Route controllers
+│   ├── middleware/            # Custom middleware
+│   ├── routes/                # API routes
+│   ├── utils/                 # Utility functions
+│   ├── docs/                  # Swagger documentation
+│   └── prisma/                # Prisma client (auto-generated)
+├── prisma/
+│   └── schema.prisma          # Database schema
+├── tests/                     # Test files
+├── .env                       # Environment variables
+├── .env.example              # Environment template
+├── .eslintrc.js              # ESLint configuration
+├── .prettierrc               # Prettier configuration
 ├── Dockerfile
 ├── docker-compose.yml
-├── package.json
 └── README.md
 
 Authentication

@@ -7,8 +7,13 @@ services:
     env_file: .env
     depends_on:
       - db
+    volumes:
+      - .:/app
+      - /app/node_modules
+    restart: unless-stopped
+
   db:
-    image: postgres:16
+    image: postgres:14
     restart: always
     environment:
       POSTGRES_USER: postgres
@@ -16,5 +21,8 @@ services:
       POSTGRES_DB: expensepilot
     volumes:
       - pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
 volumes:
   pgdata:
