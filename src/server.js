@@ -1,8 +1,9 @@
+require("dotenv").config();
 const app = require("../app");
 const http = require("http");
 const debug = require("debug")("expensepilot:server");
 
-const port = normalizePort(process.env.PORT || "5000");
+const port = normalizePort(process.env.PORT || "3000");
 app.set("port", port);
 
 const server = http.createServer(app);
@@ -45,4 +46,3 @@ function onListening() {
   const bind = typeof addr === "string" ? "pipe " + addr : "port " + addr.port;
   debug("Listening on " + bind);
 }
-
