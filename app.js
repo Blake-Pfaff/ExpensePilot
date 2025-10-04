@@ -55,7 +55,7 @@ app.get("/health", async (req, res) => {
 // API routes (to be implemented)
 app.use("/api/auth", require("./src/routes/auth"));
 app.use("/api/expenses", require("./src/routes/expenses"));
-// app.use('/api/categories', require('./src/routes/categories'));
+app.use("/api/categories", require("./src/routes/categories"));
 // app.use('/api/reports', require('./src/routes/reports'));
 
 // Root endpoint
