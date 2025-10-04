@@ -4,6 +4,8 @@ const helmet = require("helmet");
 const morgan = require("morgan");
 const rateLimit = require("express-rate-limit");
 const { PrismaClient } = require("@prisma/client");
+const swaggerUi = require("swagger-ui-express");
+const swaggerSpec = require("./src/config/swagger");
 
 const app = express();
 const prisma = new PrismaClient();
@@ -57,6 +59,16 @@ app.use("/api/auth", require("./src/routes/auth"));
 app.use("/api/expenses", require("./src/routes/expenses"));
 app.use("/api/categories", require("./src/routes/categories"));
 // app.use('/api/reports', require('./src/routes/reports'));
+
+// Swagger Documentation
+app.use(
+  "/api-docs",
+  swaggerUi.serve,
+  swaggerUi.setup(swaggerSpec, {
+    customCss: ".swagger-ui .topbar { display: none }",
+    customSiteTitle: "ExpensePilot API Docs",
+  })
+);
 
 // Root endpoint
 app.get("/", (req, res) => {
