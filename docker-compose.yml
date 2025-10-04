@@ -24,5 +24,17 @@ services:
     ports:
       - "5432:5432"
 
+  studio:
+    build: .
+    ports:
+      - "5555:5555"
+    env_file: .env
+    depends_on:
+      - db
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npx prisma studio --hostname 0.0.0.0 --port 5555
+
 volumes:
   pgdata:
