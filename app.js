@@ -8,7 +8,15 @@ const swaggerUi = require("swagger-ui-express");
 const swaggerSpec = require("./src/config/swagger");
 
 const app = express();
-const prisma = new PrismaClient();
+
+// Create Prisma Client with explicit datasources for testing
+const prisma = new PrismaClient({
+  datasources: {
+    db: {
+      url: process.env.DATABASE_URL,
+    },
+  },
+});
 
 // Security middleware
 app.use(helmet());
