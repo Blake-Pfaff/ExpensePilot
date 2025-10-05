@@ -53,7 +53,7 @@ Create a `.env` file in the root directory:
 ```env
 DATABASE_URL="postgresql://username:password@localhost:5432/expensepilot?schema=public"
 JWT_SECRET="your-super-secret-jwt-key"
-PORT=5000
+PORT=3000
 ```
 
 ### 4. Database Setup
@@ -75,7 +75,7 @@ npx prisma db seed
 npm run dev
 ```
 
-The API will be available at `http://localhost:5000`
+The API will be available at `http://localhost:3000`
 
 ### 6. Docker Development
 
@@ -92,7 +92,7 @@ docker-compose logs -f api
 
 ## 📚 API Documentation
 
-Once the server is running, visit `http://localhost:5000/api-docs` for interactive API documentation with Swagger UI.
+Once the server is running, visit `http://localhost:3000/api-docs` for interactive API documentation with Swagger UI.
 
 ### Authentication Endpoints
 
@@ -182,7 +182,7 @@ docker-compose -f docker-compose.prod.yml logs -f
 NODE_ENV=production
 DATABASE_URL="postgresql://username:password@db:5432/expensepilot?schema=public"
 JWT_SECRET="your-production-secret-key"
-PORT=5000
+PORT=3000
 ```
 
 ## 🔒 Security Features
@@ -241,42 +241,42 @@ model Expense {
 ### Phase 1: Initialize Project
 
 - [x] Setup Express, ESLint, Git, Docker
-- [ ] Add comprehensive dependencies (Prisma, JWT, testing)
+- [x] Add comprehensive dependencies (Prisma, JWT, testing)
 
 ### Phase 2: Prisma + DB Setup
 
-- [ ] Create schema, migrate DB
-- [ ] Configure database connection
+- [x] Create schema, migrate DB
+- [x] Configure database connection
 
 ### Phase 3: Auth System
 
-- [ ] Implement Register, Login, JWT middleware
-- [ ] Password hashing and validation
+- [x] Implement Register, Login, JWT middleware
+- [x] Password hashing and validation
 
 ### Phase 4: Expense + Category CRUD
 
-- [ ] Implement main endpoints
-- [ ] Add input validation
+- [x] Implement main endpoints
+- [x] Add input validation
 
 ### Phase 5: Reports Module
 
-- [ ] Implement aggregation queries
-- [ ] Add date filtering
+- [x] Implement aggregation queries
+- [x] Add date filtering
 
 ### Phase 6: Swagger Docs
 
-- [ ] Add route documentation
-- [ ] Set up API documentation
+- [x] Add route documentation
+- [x] Set up API documentation
 
 ### Phase 7: Tests
 
-- [ ] Write Jest + Supertest coverage
-- [ ] Add CI/CD pipeline
+- [x] Write Jest + Supertest coverage
+- [x] Add CI/CD pipeline
 
 ### Phase 8: Dockerize
 
-- [ ] Finalize docker-compose & production build
-- [ ] Deploy to production
+- [x] Finalize docker-compose & production build
+- [x] Deploy to production
 
 ## 🤝 Contributing
 
